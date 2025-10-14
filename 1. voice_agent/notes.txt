@@ -1,0 +1,10 @@
+1. Speech to Speech Architecture:
+    I. native audio handling by the model using realtime API.
+    speech to speech 
+
+2. chained:
+    speech -> text -> LLM model -> text -> speech 
+    here we can use any model as all model support 
+    downside is -> latency 
+    
+
