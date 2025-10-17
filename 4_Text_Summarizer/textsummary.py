@@ -1,3 +1,5 @@
+# https://huggingface.co/spaces/palrono/TextSummarizer
+
 import torch 
 import gradio as gr
 # Use a pipeline as a high-level helper
