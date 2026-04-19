@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe – Sliding Window</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       POST-WIN MODAL
+  ════════════════════════════════════════════════ -->
+  <div class="modal-overlay hidden" id="winModal">
+    <div class="modal-card">
+      <div class="modal-trophy">🏆</div>
+      <h2 class="modal-title" id="modalTitle">Player X Wins!</h2>
+      <p class="modal-sub">Want to keep playing?</p>
+      <div class="modal-actions">
+        <button class="btn btn-play-again" id="playAgainBtn">▶ Play Again</button>
+        <button class="btn btn-stop"       id="stopBtn">✕ Stop</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE LAYOUT  — three columns:
+       [New Game]  |  centre game  |  [Restart]
+  ════════════════════════════════════════════════ -->
+  <div class="page-layout">
+
+    <!-- ── LEFT: New Game ── -->
+    <div class="side-panel side-left">
+      <button class="side-btn btn-new-game" id="newGameBtn"
+              title="Reset scores and start fresh (N)">
+        <span class="side-btn-icon">✦</span>
+        <span class="side-btn-label">New Game</span>
+      </button>
+    </div>
+
+    <!-- ── CENTRE: game ── -->
+    <div class="container">
+
+      <h1>Tic Tac Toe</h1>
+      <p class="subtitle">Sliding Window Edition</p>
+
+      <div class="status" id="status">Player X's Turn</div>
+
+      <div class="scoreboard">
+        <div class="score-card score-x">
+          <span class="score-label">Player X</span>
+          <span class="score-value" id="scoreX">0</span>
+        </div>
+        <div class="score-divider">VS</div>
+        <div class="score-card score-o">
+          <span class="score-label">Player O</span>
+          <span class="score-value" id="scoreO">0</span>
+        </div>
+      </div>
+
+      <div class="board" id="board"></div>
+
+      <p class="legend">
+        <span class="legend-dot"></span>
+        Dashed border = mark that disappears on next move
+      </p>
+
+    </div><!-- /container -->
+
+    <!-- ── RIGHT: Restart ── -->
+    <div class="side-panel side-right">
+      <button class="side-btn btn-restart" id="restartBtn"
+              title="Restart round, keep scores (R)">
+        <span class="side-btn-icon">↺</span>
+        <span class="side-btn-label">Restart</span>
+      </button>
+    </div>
+
+  </div><!-- /page-layout -->
+
+  <script src="script.js"></script>
+</body>
+</html>
